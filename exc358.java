@@ -1,10 +1,8 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class exc358 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         double[] precoCompra = new double[100];
         double[] precoVenda = new double[100];
         double lucro;
@@ -12,10 +10,15 @@ public class exc358 {
 
         // Entrada dos preços de compra e venda para 100 mercadorias
         for (int i = 0; i < 100; i++) {
-            System.out.print("\nPreço de compra da mercadoria " + (i + 1) + ": ");
-            precoCompra[i] = scanner.nextDouble();
-            System.out.print("Preço de venda da mercadoria " + (i + 1) + ": ");
-            precoVenda[i] = scanner.nextDouble();
+            while (true) {
+                try {
+                    precoCompra[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Preço de compra da mercadoria " + (i + 1) + ": "));
+                    precoVenda[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Preço de venda da mercadoria " + (i + 1) + ": "));
+                    break;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Preço inválido. Digite novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
         }
 
         // Cálculo do lucro e contagem das mercadorias nas diferentes faixas de lucro
@@ -33,10 +36,8 @@ public class exc358 {
         }
 
         // Impressão dos resultados
-        System.out.println("\nTotal de mercadorias com lucro < 10%: " + totLucroMenor10);
-        System.out.println("Total de mercadorias com 10% <= lucro <= 20%: " + totLucroEntre10e20);
-        System.out.println("Total de mercadorias com lucro > 20%: " + totLucroMaior20);
-
-        scanner.close();
+        JOptionPane.showMessageDialog(null, "Total de mercadorias com lucro < 10%: " + totLucroMenor10);
+        JOptionPane.showMessageDialog(null, "Total de mercadorias com 10% <= lucro <= 20%: " + totLucroEntre10e20);
+        JOptionPane.showMessageDialog(null, "Total de mercadorias com lucro > 20%: " + totLucroMaior20);
     }
 }
