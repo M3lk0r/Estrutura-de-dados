@@ -1,30 +1,37 @@
-import java.util.Scanner;
-import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 public class exc362 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // Vetores para armazenar os dois conjuntos
         int[] vet1 = new int[10];
         int[] vet2 = new int[20];
-        
+
         // HashSet para armazenar elementos comuns sem repetições
-        HashSet<Integer> comuns = new HashSet<>();
-        
+        java.util.HashSet<Integer> comuns = new java.util.HashSet<>();
+
         // Entrada dos dados para o vetor 1 (10 elementos)
-        System.out.println("Entrada de dados do vetor 1 (10 elementos)");
         for (int i = 0; i < 10; i++) {
-            System.out.print("Entre com o " + (i + 1) + "º elemento: ");
-            vet1[i] = scanner.nextInt();
+            while (true) {
+                try {
+                    vet1[i] = Integer.parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 1:"));
+                    break;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, digite um número.");
+                }
+            }
         }
 
         // Entrada dos dados para o vetor 2 (20 elementos)
-        System.out.println("Entrada de dados do vetor 2 (20 elementos)");
         for (int i = 0; i < 20; i++) {
-            System.out.print("Entre com o " + (i + 1) + "º elemento: ");
-            vet2[i] = scanner.nextInt();
+            while (true) {
+                try {
+                    vet2[i] = Integer.parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 2:"));
+                    break;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, digite um número.");
+                }
+            }
         }
 
         // Encontrando elementos comuns entre vet1 e vet2
@@ -39,14 +46,13 @@ public class exc362 {
 
         // Exibindo os resultados
         if (!comuns.isEmpty()) {
-            System.out.println("\nElementos comuns:");
+            StringBuilder resultado = new StringBuilder("Elementos comuns:\n");
             for (Integer elem : comuns) {
-                System.out.println(elem);
+                resultado.append(elem).append("\n");
             }
+            JOptionPane.showMessageDialog(null, resultado.toString());
         } else {
-            System.out.println("\nNão existem elementos comuns.");
+            JOptionPane.showMessageDialog(null, "Não existem elementos comuns.");
         }
-
-        scanner.close();
     }
 }
