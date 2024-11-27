@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class exc358 {
@@ -12,11 +13,14 @@ public class exc358 {
         for (int i = 0; i < 100; i++) {
             while (true) {
                 try {
-                    precoCompra[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Preço de compra da mercadoria " + (i + 1) + ": "));
-                    precoVenda[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Preço de venda da mercadoria " + (i + 1) + ": "));
+                    precoCompra[i] = Double.parseDouble(
+                            JOptionPane.showInputDialog(null, "Preço de compra da mercadoria " + (i + 1) + ": "));
+                    precoVenda[i] = Double.parseDouble(
+                            JOptionPane.showInputDialog(null, "Preço de venda da mercadoria " + (i + 1) + ": "));
                     break;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Preço inválido. Digite novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Preço inválido. Digite novamente.", "Erro",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         }

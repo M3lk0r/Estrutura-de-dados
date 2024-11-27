@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class exc394 {
@@ -12,13 +13,15 @@ public class exc394 {
 
         while (true) {
             // Menu de opções
-            String op = JOptionPane.showInputDialog("\n\n\nMENU\n1 - ENTRAR NOMES\n2 - ENTRAR 1ª NOTA\n3 - ENTRAR 2ª NOTA\n4 - CALCULAR MÉDIA\n5 - LISTAR NO DISPLAY\n6 - SAIR\nOPÇÃO: ");
+            String op = JOptionPane.showInputDialog(
+                    "\n\n\nMENU\n1 - ENTRAR NOMES\n2 - ENTRAR 1ª NOTA\n3 - ENTRAR 2ª NOTA\n4 - CALCULAR MÉDIA\n5 - LISTAR NO DISPLAY\n6 - SAIR\nOPÇÃO: ");
 
             if (op.equals("1")) {
                 flag = 1;
                 for (int i = 0; i < 50; i++) {
                     while (true) {
-                        String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + (i + 1) + " (máximo 30 caracteres e todas as letras maiúsculas): ");
+                        String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + (i + 1)
+                                + " (máximo 30 caracteres e todas as letras maiúsculas): ");
                         if (nome.length() <= 30) {
                             nomes[i] = nome.toUpperCase();
                             while (nomes[i].length() < 30) {
@@ -38,7 +41,8 @@ public class exc394 {
                     for (int i = 0; i < 50; i++) {
                         while (true) {
                             try {
-                                nota1[i] = Double.parseDouble(JOptionPane.showInputDialog("Digite a 1ª nota do aluno " + (i + 1) + ": "));
+                                nota1[i] = Double.parseDouble(
+                                        JOptionPane.showInputDialog("Digite a 1ª nota do aluno " + (i + 1) + ": "));
                                 if (nota1[i] < 0 || nota1[i] > 10) {
                                     JOptionPane.showMessageDialog(null, "Nota inválida. Digite uma nota entre 0 e 10.");
                                 } else {
@@ -58,7 +62,8 @@ public class exc394 {
                     for (int i = 0; i < 50; i++) {
                         while (true) {
                             try {
-                                nota2[i] = Double.parseDouble(JOptionPane.showInputDialog("Digite a 2ª nota do aluno " + (i + 1) + ": "));
+                                nota2[i] = Double.parseDouble(
+                                        JOptionPane.showInputDialog("Digite a 2ª nota do aluno " + (i + 1) + ": "));
                                 if (nota2[i] < 0 || nota2[i] > 10) {
                                     JOptionPane.showMessageDialog(null, "Nota inválida. Digite uma nota entre 0 e 10.");
                                 } else {

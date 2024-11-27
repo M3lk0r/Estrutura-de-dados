@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class exc413 {
@@ -9,7 +10,8 @@ public class exc413 {
             for (int c = 0; c < 5; c++) {
                 while (true) {
                     try {
-                        n[L][c] = Integer.parseInt(JOptionPane.showInputDialog("Digite o elemento n[" + (L + 1) + "][" + (c + 1) + "]:"));
+                        n[L][c] = Integer.parseInt(
+                                JOptionPane.showInputDialog("Digite o elemento n[" + (L + 1) + "][" + (c + 1) + "]:"));
                         break;
                     } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, digite um número.");

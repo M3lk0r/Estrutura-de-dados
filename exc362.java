@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class exc362 {
@@ -14,7 +15,8 @@ public class exc362 {
         for (int i = 0; i < 10; i++) {
             while (true) {
                 try {
-                    vet1[i] = Integer.parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 1:"));
+                    vet1[i] = Integer
+                            .parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 1:"));
                     break;
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, digite um número.");
@@ -26,7 +28,8 @@ public class exc362 {
         for (int i = 0; i < 20; i++) {
             while (true) {
                 try {
-                    vet2[i] = Integer.parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 2:"));
+                    vet2[i] = Integer
+                            .parseInt(JOptionPane.showInputDialog("Entre com o " + (i + 1) + "º elemento do vetor 2:"));
                     break;
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, digite um número.");

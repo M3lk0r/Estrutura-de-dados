@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class exc346 {
@@ -5,7 +6,7 @@ public class exc346 {
     public static void main(String[] args) {
         String frase;
         int op;
-        
+
         do {
             // Exibe o menu
             String menu = "MENU\n"
@@ -21,13 +22,15 @@ public class exc346 {
             switch (op) {
                 case 1:
                     // Opção 1: Imprime o comprimento da frase
-                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase", JOptionPane.INFORMATION_MESSAGE);
+                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase",
+                            JOptionPane.INFORMATION_MESSAGE);
                     frase = input;
                     JOptionPane.showMessageDialog(null, "Número de caracteres da frase: " + frase.length());
                     break;
                 case 2:
                     // Opção 2: Imprime os dois primeiros e os dois últimos caracteres
-                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase", JOptionPane.INFORMATION_MESSAGE);
+                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase",
+                            JOptionPane.INFORMATION_MESSAGE);
                     frase = input;
                     if (frase.length() >= 2) {
                         String doisPrimeiros = frase.substring(0, 2);
@@ -35,12 +38,14 @@ public class exc346 {
                         JOptionPane.showMessageDialog(null, "Os dois primeiros caracteres: " + doisPrimeiros + "\n"
                                 + "Os dois últimos caracteres: " + doisUltimos);
                     } else {
-                        JOptionPane.showMessageDialog(null, "A frase deve ter pelo menos 2 caracteres.", "Erro", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "A frase deve ter pelo menos 2 caracteres.", "Erro",
+                                JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case 3:
                     // Opção 3: Imprime a frase espelhada
-                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase", JOptionPane.INFORMATION_MESSAGE);
+                    input = JOptionPane.showInputDialog(null, "Digite uma frase:", "Frase",
+                            JOptionPane.INFORMATION_MESSAGE);
                     frase = input;
                     StringBuilder fraseEspelhada = new StringBuilder(frase);
                     JOptionPane.showMessageDialog(null, "Frase espelhada: " + fraseEspelhada.reverse().toString());
@@ -54,6 +59,6 @@ public class exc346 {
                     JOptionPane.showMessageDialog(null, "Opção não disponível", "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
-        } while (op != 4);  // Repete até a opção 4 ser escolhida
+        } while (op != 4); // Repete até a opção 4 ser escolhida
     }
 }
